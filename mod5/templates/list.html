@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content = "text/html; charset=windows-1252">
+</head>
+<body>
+
+    <table border = "1">
+      <thead>
+            <tr><td> Name</td>
+            <td> Age </td>
+            <td> Phone Number </td>
+            <td> Has COVID </td>
+            <td> Security Role Level </td>
+            <td> Password </td>
+        </tr></thead>
+            <tbody>
+            {% for row in rows %}
+            <tr>
+                <td> {{row["Name"]}}</td>
+                <td> {{row["Age"]}}</td>
+                <td> {{row["PhoneNumber"]}}</td>
+                <td> {{row["COVID"]}}</td>
+                <td> {{row["SecurityLevel"]}}</td>
+                <td> {{row["Password"]}}</td>
+            </tr>
+    {% endfor %}
+            </tbody>
+    </table>
+    <h2> <a href = "/"> back to home </a></h2>
+</body>
+</html>

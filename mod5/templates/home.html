@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content = "text/html; charset=windows-1252">
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li> {{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+{% if session ['logged_in'] %}
+    <h1>Welcome {{ name }} </h1>
+        {% if session['SecurityLevel'] == 1 %}
+            <h2><a href="/userInfo"> Show Hospital App User </a></h2>
+        {% endif %}
+
+        {% if session['SecurityLevel'] == 2 %}
+            <h2><a href="/userInfo"> Show Hospital App User </a></h2>
+            <h2><a href="/enternew"> Add new Hospital App User </a></h2>
+        {% endif %}
+
+        {% if session['SecurityLevel'] == 3 %}
+            <h2><a href="/userInfo"> Show Hospital App User </a></h2>
+            <h2><a href="/enternew"> Add new Hospital App User </a></h2>
+            <h2><a href="/list"> List Hospital App Users </a></h2>
+        {% endif %}
+
+    <h2><a href="/logout">Log Out</a></h2>
+{% endif %}
+
+</body>
+</html>

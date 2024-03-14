@@ -1,0 +1,9 @@
+# Ignore venv directory
+COP4520/Flask/venv/
+
+# Ignore .idea directory
+COP4520/Flask/.idea/
+
+# Ignore all files and directories in COP4520/Flask except ProjectFiles
+COP4520/Flask/*
+!COP4520/Flask/ProjectFiles/

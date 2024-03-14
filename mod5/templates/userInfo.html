@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+    <h1>Hospital App User Information</h1>
+    {% for row in rows %}
+    <b>Name: </b> {{ row['Name'] }} <br>
+    <b>Age: </b> {{ row['Age'] }} <br>
+    <b>Phone number: </b> {{ row['PhoneNumber'] }} <br>
+    <b>Has COVID: </b>{{ 'Yes' if row['COVID'] else 'No' }} <br>
+    <b>Security Role Level: </b>{{ row['SecurityLevel'] }} <br>
+    <b>Login Password: </b>{{ row['Password'] }}
+    {% endfor %}
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
